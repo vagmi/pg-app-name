@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["vagmi.mudumbai@gmail.com"]
   gem.description   = %q{Sets the application name for a postgres connection}
   gem.summary       = %q{Sets the application name for a postgres connection}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/vagmi/pg-app-name"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

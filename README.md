@@ -1,6 +1,6 @@
 # Pg::App::Name
 
-TODO: Write a gem description
+It sets the application name for postgres database connections. It is available in PostgreSQL server 9.x.
 
 ## Installation
 
@@ -18,7 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+It uses the environment variable `PG_APP_NAME` to set the application name. If you are using Rails, it automatically sets the rails app name as the application name for the database. Setting the environment variable will overwrite the Rails application name.
+
+Start your app. Launch `psql` and query the `pg_stat_activity` table to watch the gem in action.
 
 ## Contributing
 
