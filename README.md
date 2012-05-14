@@ -2,6 +2,8 @@
 
 It sets the application name for postgres database connections. It is available in PostgreSQL server 9.x.
 
+[![Build Status](https://secure.travis-ci.org/vagmi/pg-app-name.png?branch=master)](http://travis-ci.org/vagmi/pg-app-name)
+
 ## Installation
 
 Add this line to your application's Gemfile:
