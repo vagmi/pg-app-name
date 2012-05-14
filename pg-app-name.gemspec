@@ -16,5 +16,6 @@ Gem::Specification.new do |gem|
   gem.version       = Pg::App::Name::VERSION
   gem.add_dependency 'activerecord', '~> 3'
   gem.add_dependency 'pg', '~> 0'
+  gem.add_development_dependency 'rake', '~> 0.9'
   gem.add_development_dependency 'rspec', '~> 2'
 end
