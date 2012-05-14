@@ -56,6 +56,10 @@ class ActiveRecord::ConnectionAdapters::ConnectionPool
   include PG::PoolApplicationName
 end
 
-if defined?(RAILS)
-  ENV['PG_APP_NAME'] ||= Rails.application.class.name.split('::')[0].tableize rescue 'rails'
+if defined?(Rails)
+  class PG::AppNameRailtie < Rails::Railtie
+    initializer 'pg-app-name-initializer', :before=>'active_record.set_configs' do 
+      ENV['PG_APP_NAME'] ||= Rails.application.class.name.split('::')[0].tableize rescue 'rails'
+    end
+  end
 end
