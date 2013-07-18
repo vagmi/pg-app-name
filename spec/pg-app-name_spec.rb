@@ -10,7 +10,7 @@ describe "Set PG App Name" do
   end
 
   it "should monkey patch ConnectionPool" do
-    cp = ActiveRecord::ConnectionAdapters::ConnectionPool.new(ActiveRecord::Base::ConnectionSpecification.new(connection_params,"postgresql_connection"))
+    cp = ActiveRecord::ConnectionAdapters::ConnectionPool.new(ActiveRecord::ConnectionAdapters::ConnectionSpecification.new(connection_params,"postgresql_connection"))
     cp.respond_to?(:new_connection_with_application_name).should be_true
   end
 
@@ -23,7 +23,7 @@ describe "Set PG App Name" do
   end
 
   it "should set the application name while establishing connection with connection pool" do
-    cp = ActiveRecord::ConnectionAdapters::ConnectionPool.new(ActiveRecord::Base::ConnectionSpecification.new(connection_params,"postgresql_connection"))
+    cp = ActiveRecord::ConnectionAdapters::ConnectionPool.new(ActiveRecord::ConnectionAdapters::ConnectionSpecification.new(connection_params,"postgresql_connection"))
     conn = cp.checkout
     result = conn.exec_query "select application_name from pg_stat_activity where datname='"+connection_params[:database]+"'"
     result.rows.flatten!
