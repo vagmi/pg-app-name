@@ -24,6 +24,26 @@ It uses the environment variable `PG_APP_NAME` to set the application name. If y
 
 Start your app. Launch `psql` and query the `pg_stat_activity` table to watch the gem in action.
 
+## Running the tests
+
+You will need an installation of postgres to be able to run the tests. On OSX,
+you can use [homebrew](http://mxcl.github.io/homebrew/) or
+[Postgres.app](http://postgresapp.com/). You will also need a `postgres` role
+and a database named `pg_app_name_test` in your postgres installation:
+
+    $ psql
+    # create role postgres with login createdb;
+    # create database pg_app_name_test;
+    # \q
+
+Then get the development dependencies:
+
+    $ bundle
+
+And run the tests:
+
+    $ rake spec
+
 ## Contributing
 
 1. Fork it
