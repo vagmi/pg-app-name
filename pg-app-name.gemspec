@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "pg-app-name"
   gem.require_paths = ["lib"]
   gem.version       = Pg::App::Name::VERSION
-  gem.add_dependency 'activerecord', '~> 3'
+  gem.add_dependency 'activerecord', '~> 4'
   gem.add_dependency 'pg', '~> 0'
   gem.add_development_dependency 'rake', '~> 0.9'
   gem.add_development_dependency 'rspec', '~> 2'
